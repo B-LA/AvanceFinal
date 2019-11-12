@@ -15,12 +15,12 @@
         <jsp:include page="/WEB-INF/jsp/menu.jsp"/>
         <div class="container">
             <div class="row">
-                <h3>Nuevo Cliente</h3>
+                <h3>Editar Cliente</h3>
             </div>
             <div class="row">
                 <div class=" col-md-7">
-                    <f:form action="create" 
-                            modelAttribute="libro" method="post">
+                    <f:form action="${action}" 
+                            modelAttribute="cliente" method="post">
                         <f:errors cssClass="alert alert-danger" element="div" path="*" />
                         <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Campos requeridos</strong></div>
                         <div class="form-group">

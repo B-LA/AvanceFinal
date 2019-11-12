@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><s:message code="libro.nuevo"/></title>
+        <title>Crear Cliente</title>
         <jsp:include page="/WEB-INF/jsp/cabecera.jsp"/>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css"
               rel="stylesheet" />
@@ -20,7 +20,8 @@
             <div class="row">
                 <div class=" col-md-7">
                     <f:form action="create" 
-                            modelAttribute="libro" method="post">
+                            modelAttribute="cliente" method="post">
+                        
                         <f:errors cssClass="alert alert-danger" element="div" path="*" />
                         <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Campos requeridos</strong></div>
                         <div class="form-group">
@@ -79,7 +80,7 @@
             </div>
         </div>
         <script>
-            $('#autor').select2();
+          
         </script>
         <jsp:include page="/WEB-INF/jsp/pie.jsp"/>
     </body>

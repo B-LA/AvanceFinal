@@ -22,6 +22,7 @@ public class ClienteModel {
 
     public int insertarCliente(Cliente cli) {
         Session ses = factory.openSession();
+        
         try {
             Transaction tran = ses.beginTransaction();
             ses.save(cli);
@@ -29,6 +30,7 @@ public class ClienteModel {
             ses.close();
             return 1;
         } catch (Exception e) {
+            System.out.println("la esepcion" + e.getMessage());
             ses.close();
             return 0;
         }
@@ -36,12 +38,14 @@ public class ClienteModel {
 
     public List<Cliente> listarClientes() {
         Session ses = factory.openSession();
+        System.out.println("Se ejecuta");
         try {
-            Query consulta = ses.createQuery("SELECT e FROM Cliente e");
+            Query consulta = ses.createQuery("SELECT c FROM Cliente c");
             List<Cliente> lista = consulta.list();
             ses.close();
             return lista;
         } catch (Exception e) {
+            System.out.println("la esepcion" + e.getMessage());
             ses.close();
             return null;
         }

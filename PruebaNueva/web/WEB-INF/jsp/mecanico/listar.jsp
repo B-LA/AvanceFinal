@@ -14,7 +14,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <a class="btn btn-primary btn-md" href="<s:url value="/libros/create"/>">Crear Cliente</a>
+                    <a class="btn btn-primary btn-md" href="<s:url value="/mecanico/create"/>">Crear Mecanico</a>
                     <br><br>
                     <table class="table table-striped table-bordered table-hover" id="tabla">
                         <thead>
@@ -40,14 +40,14 @@
                                     <td>${mecanico.telefono2}</td>
                                     <td>${mecanico.dui}</td>
                                     <td>${mecanico.nit}</td>
-                                   <!-- <td>
+                                   <td>
                                         <a class="btn btn-primary"
-                                           href="<s:url value="/libros/edit/"/>">
+                                           href="<s:url value="/mecanico/edit/${mecanico.idmecanico}"/>">
                                             <span class="glyphicon glyphicon-edit"></span> Editar</a>
                                         <a class="btn btn-danger"
-                                           href="javascript:eliminar('')">
+                                           href="javascript:eliminar('${mecanico.idmecanico}')">
                                             <span class="glyphicon glyphicon-trash"></span> Eliminar</a>
-                                    </td>-->
+                                    </td>
                                 </tr>
                             </c:forEach>
                         </tbody>

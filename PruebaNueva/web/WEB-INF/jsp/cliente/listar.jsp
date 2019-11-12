@@ -40,14 +40,14 @@
                                     <td>${cliente.telefono2}</td>
                                     <td>${cliente.direccion}</td>
                                     <td>${cliente.dui}</td>
-                                   <!-- <td>
+                                    <td>
                                         <a class="btn btn-primary"
-                                           href="<s:url value="/libros/edit/"/>">
+                                           href="<s:url value="/cliente/edit/${cliente.idcliente}"/>">
                                             <span class="glyphicon glyphicon-edit"></span> Editar</a>
                                         <a class="btn btn-danger"
-                                           href="javascript:eliminar('')">
+                                           href="javascript:eliminar('${cliente.idcliente}')">
                                             <span class="glyphicon glyphicon-trash"></span> Eliminar</a>
-                                    </td>-->
+                                    </td>
                                 </tr>
                             </c:forEach>
                         </tbody>

@@ -16,7 +16,7 @@
         <jsp:include page="/WEB-INF/jsp/menu.jsp"/>
         <div class="container">
             <div class="row">
-                <h3>Nuevo Cliente</h3>
+                <h3>Nuevo Mecanico</h3>
             </div>
             <div class="row">
                 <div class=" col-md-7">

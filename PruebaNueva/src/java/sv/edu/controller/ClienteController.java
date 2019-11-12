@@ -28,8 +28,11 @@ public class ClienteController {
     public String listarCliente(Model model) {
 
         model.addAttribute("listarCliente", mecModel.listarClientes());
-
-        return "cliente/listar";
+        if(model == null){
+            return null;
+        }else{
+          return "cliente/listar";   
+        }       
     }
     
     @RequestMapping(value = "create", method = RequestMethod.GET)
@@ -43,8 +46,9 @@ public class ClienteController {
     @RequestMapping(value = "create", method = RequestMethod.POST)
     public String insertarCliente(@ModelAttribute("cliente") Cliente cliente,
             Model model, RedirectAttributes atributos){
-        
-        if (mecModel.insertarCliente(cliente)>0) {
+        int variable = mecModel.insertarCliente(cliente);
+        System.out.println("Valor es" + variable);
+        if (variable>0) {
             //si se insertó, se pasa el mensaje de éxito
             atributos.addFlashAttribute("exito", "Cliente registrado exitosamente");
             
@@ -53,7 +57,7 @@ public class ClienteController {
         }else{
             //si no insertó regresamos al formulario de ingreso
             model.addAttribute("cliente", cliente);
-            return "clientes/nuevo";
+            return "cliente/nuevo";
         }
     }
     
